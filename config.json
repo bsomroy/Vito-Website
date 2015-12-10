@@ -1,0 +1,10 @@
+"development": {
+	"db": {
+		"hostname": "localhost",
+		"username": "vito_master",
+		"password": "oYm8xaq4hjfd8mz67ixQmiH",
+		"database": "vito_website"
+	},
+	"use_compiled": false,
+	"domain": "http://localhost:4000"
+}
