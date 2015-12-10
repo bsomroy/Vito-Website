@@ -25,6 +25,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(compression({threshold: 512}));
 app.use('/scripts', express.static(__dirname + '/app/scripts'));
 app.use('/images', express.static(__dirname + '/app/images'));
 app.use('/css', express.static(__dirname + '/app/css'));

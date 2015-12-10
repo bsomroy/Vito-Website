@@ -1,0 +1,16 @@
+{
+	"name": "vito_website",
+	"version": "0.0.1",
+	"dependencies": {
+		"requirejs": "latest",
+		"jquery": "latest",
+		"lodash": "latest",
+		"handlebars": "latest",
+		"backbone": "latest",
+		"bootstrap": "latest",
+		"spinjs": "latest",
+		"jquery-ui": "latest",
+		"jquery-nstSlider": "latest",
+		"bowser": "latest"
+	}
+}

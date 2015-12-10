@@ -1,0 +1,5 @@
+app/scripts/vendor
+.DS_Store
+node_modules
+build
+app/scripts/templates.js

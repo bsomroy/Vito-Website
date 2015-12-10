@@ -1,0 +1,22 @@
+{
+	"name": "vito_website",
+	"description": "Vito Website Tools",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "*",
+		"jade": "*",
+		"async": "*",
+		"mysql": "*",
+		"db-migrate": "*",
+		"requirejs": "*",
+		"body-parser": "*",
+		"express-session": "*",
+		"node-uuid": "*",
+		"compression": "*",
+		"request": "*",
+		"serve-favicon": "*",
+		"safe-json-parse": "*",
+		"useragent": "*"
+	}
+}
