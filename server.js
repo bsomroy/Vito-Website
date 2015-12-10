@@ -17,6 +17,7 @@ var pool = mysql.createPool({
 });
 
 //Application Settings
+var favicon = require('serve-favicon');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -34,8 +35,11 @@ app.enable('trust proxy');
 
 //Get Functions
 app.get('/', function(req, res) {
-	console.log(res);
-	console.log(req);
+	console.log("made it to server file");
+	//console.log(res);
+	//console.log(req);
 });
 
-//Post Functions
+var server = app.listen(4000, "0.0.0.0", function() {
+	console.log('Listening on port %d', server.address().port);
+});
