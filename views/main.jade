@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title "Vito's Website"
+		meta(name="description" content="")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body
+		header
+			div#logo Logo Placeholder
+			nav a(href="#{mainURL}") Home
+		main
+			div#naruto
+
+		footer
+			nav#footerNav a(href="#{mainURL}") Home
+
+		script.
+			var mainURL = !{JSON.stringify(mainURL)};
+			var env = !{JSON.stringify(env)};
+		script(data-main="#{data_main_location}" src="#{require_location}")

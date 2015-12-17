@@ -1,0 +1,28 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['naruto'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = container.invokePartial(partials.volume,depth0,{"name":"volume","data":data,"indent":"\t\t","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<h3>All Naruto Volumes</h3>\n\n<div id=\"listOfVolumes\">\n"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.narutoVolume : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</div>";
+},"usePartial":true,"useData":true});
+templates['unsupported_browser'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"alert fade-in\" role=\"alert\">\n	<h4>Your Browser is Incompatible</h4>\n	<p>In order to properly view this application, please upgrade to the latest version of your browser:\n		<ul>\n			<li>Internet Explorer (<a href=\"http://windows.microsoft.com/en-us/internet-explorer/download-ie\">click to download</a>)</li>\n			<li>Chrome (<a href=\"https://www.google.com/chrome/browser/desktop/index.html\">click to download</a>)</li>\n		</ul>\n	</p>\n</div>";
+},"useData":true});
+templates['volume'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"narutoVolume\">\n	<a href=\""
+    + alias4(((helper = (helper = helpers.Link || (depth0 != null ? depth0.Link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Link","hash":{},"data":data}) : helper)))
+    + "\">"
+    + alias4(((helper = (helper = helpers.Volume || (depth0 != null ? depth0.Volume : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Volume","hash":{},"data":data}) : helper)))
+    + " - "
+    + alias4(((helper = (helper = helpers.Title || (depth0 != null ? depth0.Title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data}) : helper)))
+    + "</a>\n</div>";
+},"useData":true});
+})();
