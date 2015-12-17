@@ -18,6 +18,7 @@ var pool = mysql.createPool({
 
 //Application Settings
 var favicon = require('serve-favicon');
+var UAParser = require('ua-parser-js');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -30,14 +31,43 @@ app.use(compression({threshold: 512}));
 app.use('/scripts', express.static(__dirname + '/app/scripts'));
 app.use('/images', express.static(__dirname + '/app/images'));
 app.use('/css', express.static(__dirname + '/app/css'));
+app.use('/dist', express.static(__dirname + '/dist'));
 app.use(favicon(__dirname + '/favicon.ico'));
 app.enable('trust proxy');
 
+var notLoadableBrowsers = { 'IE': 8 };
+
 //Get Functions
 app.get('/', function(req, res) {
-	console.log("made it to server file");
-	//console.log(res);
-	//console.log(req);
+	var styles = [];
+	var parser = new UAParser(req.headers['user-agent']);
+	var parserResult = parser.getResult();
+	if (notLoadableBrowsers[parserResult.browser.name] && parseInt(parserResult.browser.version, 10) <= notLoadableBrowsers[parserResult.browser.name]) {
+		res.render('unsupported_browser');
+	} else {
+		if (config.use_compiled) {
+			require_location = 'dist/scripts/vendor/requirejs/require.js';
+			styles.push('dist/css/main.css');
+			data_main_location = 'dist/scripts/main';
+		} else {
+			require_location = 'scripts/vendor/requirejs/require.js';
+			styles.push('css/main.css');
+			data_main_location = 'scripts/main';
+		}
+		res.render('main', {
+			require_location: require_location,
+			styles: styles,
+			data_main_location: data_main_location,
+			domain: config.domain,
+			env: env
+		});
+	}
+});
+
+app.get('/session/naruto', function(req, res) {
+	request('http://www.mangapanda.com/naruto', function(err, response, html) {
+		res.send(html);
+	});
 });
 
 var server = app.listen(4000, "0.0.0.0", function() {
