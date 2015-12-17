@@ -8,6 +8,7 @@
 		"handlebars": "latest",
 		"backbone": "latest",
 		"bootstrap": "latest",
+		"moment": "latest",
 		"spinjs": "latest",
 		"jquery-ui": "latest",
 		"jquery-nstSlider": "latest",

@@ -19,6 +19,7 @@ var pool = mysql.createPool({
 //Application Settings
 var favicon = require('serve-favicon');
 var UAParser = require('ua-parser-js');
+var request = require('request');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -58,7 +59,7 @@ app.get('/', function(req, res) {
 			require_location: require_location,
 			styles: styles,
 			data_main_location: data_main_location,
-			domain: config.domain,
+			mainURL: config.domain,
 			env: env
 		});
 	}
@@ -66,7 +67,11 @@ app.get('/', function(req, res) {
 
 app.get('/session/naruto', function(req, res) {
 	request('http://www.mangapanda.com/naruto', function(err, response, html) {
-		res.send(html);
+		if (!err && response.statusCode == 200) {
+	        res.json(html);
+	    } else {
+	    	res.status(500).json({OK: false});
+	    }
 	});
 });
 
