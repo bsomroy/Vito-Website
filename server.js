@@ -75,6 +75,6 @@ app.get('/session/naruto', function(req, res) {
 	});
 });
 
-var server = app.listen(4000, config.privateIP, function() {
+var server = app.listen(4000, "0.0.0.0", function() {
 	console.log('Listening on port %d', server.address().port);
 });

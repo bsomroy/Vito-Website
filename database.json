@@ -1,0 +1,19 @@
+{
+	"development": {
+		"driver": "mysql",
+		"user": "admin",
+		"password": "90izecujir309",
+		"host": "localhost",
+		"database": "naruto",
+		"multipleStatements": true
+	},
+
+	"production": {
+		"driver": "mysql",
+		"user": "admin",
+		"password": "90izecujir309",
+		"host": "localhost",
+		"database": "naruto",
+		"multipleStatements": true
+	}
+}

@@ -2,23 +2,21 @@
 	"development": {
 		"db": {
 			"hostname": "localhost",
-			"username": "vito_master",
-			"password": "oYm8xaq4hjfd8mz67ixQmiH",
-			"database": "vito_website"
+			"username": "admin",
+			"password": "90izecujir309",
+			"database": "naruto"
 		},
 		"use_compiled": false,
-		"domain": "http://localhost:4000",
-		"privateIP": "0.0.0.0"
-	}
+		"domain": "http://localhost:4000"
+	},
 	"production": {
 		"db": {
 			"hostname": "localhost",
-			"username": "vito_master",
-			"password": "oYm8xaq4hjfd8mz67ixQmiH",
-			"database": "vito_website"
+			"username": "admin",
+			"password": "90izecujir309",
+			"database": "naruto"
 		},
 		"user_compiled": false,
-		"domain": "http://http://104.131.48.24:4000",
-		"privateIP": "10.132.177.44"
+		"domain": "http://104.131.48.24:4000"
 	}
 }
